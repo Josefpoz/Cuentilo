@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Cuentilo Symbol: C aus einem Erzählfaden mit aufgeschlagenem Buch">
+  <rect width="512" height="512" rx="110" fill="#102238"/>
+  <rect x="56" y="56" width="400" height="400" rx="103" fill="#86e3bc"/>
+  <path d="M349 162C324 137 288 125 248 128C184 132 137 186 137 255C137 324 186 377 250 382C292 386 328 373 350 350" fill="none" stroke="#12332e" stroke-width="38" stroke-linecap="round"/>
+  <path d="M216 256c18-12 32-12 40 0c9-12 25-12 43 0v51c-20-7-33-5-43 6c-10-11-25-13-40-6z" fill="none" stroke="#12332e" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M256 256v57" fill="none" stroke="#12332e" stroke-width="8" stroke-linecap="round"/>
+  <path d="M348 161c10 10 18 22 20 36" fill="none" stroke="#d87269" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="370" cy="208" r="8" fill="#d87269"/>
+</svg>
