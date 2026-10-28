@@ -1,0 +1,41 @@
+CUENTILO 0.7a.8-P14.1 | DER ROTE FADEN
+========================================
+
+Designprototyp für das bestehende Cuentilo mit voller GitHub-Pages-App.
+
+Neu:
+- Appweite primäre Navigationspalette: Nachtblau, Koralle, Creme
+- Neue Buch-/Faden-Marke als SVG und PNG (180/192/512) für PWA, Homescreen, Header
+- Learn-Pfad mit rotem Faden und 13 Stationen (10 Lektionen, 3 Grammatikwerkstätten)
+- Kompakte Kurskarten mit Lektionstitel, Kurzbeschreibung, passendem seitlichem Bild
+- Status: abgeschlossen, aktuell/fortsetzen, später; Fortschrittsanzeige
+- Weiterlernen-Knopf oben auf der Learn-Seite
+- Zusatzwerkzeuge unter einem optional aufklappbaren Bereich
+- Responsive: Schlangenpfad in zwei Spalten bei breiten Screens, durchgehender Randfaden auf Handy
+
+Bilder:
+Die 13 kleinen Illustrationen wurden als thematisch kuratierte Bildausschnitte aus den ACHT
+BEREITS VORHANDENEN Cuentilo-Story-Buchcovern angelegt. Das gewährleistet im Entwurf
+exakt dieselbe Illustrationstechnik und Farbwelt, ist aber KEIN finaler Satz neu
+illustrierter Motive für jede A1-Lektion. Die Motivauswahl kann nach UX-Abnahme
+durch eigens gestaltete Bilder ersetzt werden, ohne Programmcode neu zu entwerfen.
+Die Original-Story-Cover-Dateien wurden nicht verändert.
+
+Erhalten:
+- 10 Lektionen, 15 Grammatikhappen, 3 Werkstätten
+- Audio, Stories, Vocab, SRS, Formenwerkstatt und alle bisherigen Lernfunktionen
+- Unveränderter localStorage-Schlüssel cuentilo-learn-p131-course-v1
+- Unverändertes Vocab-SRS-Datenmodell, keine neuen SRS-Schreibzugriffe
+- Alle Stationen sind für den didaktischen Test weiterhin direkt anklickbar
+
+Installation: ZIP vollständig entpacken und den Inhalt in das Stammverzeichnis
+von GitHub-Repository cuentilo übernehmen. Nicht die ZIP selbst hochladen.
+Die Dateien index.html und .nojekyll liegen direkt auf Root-Ebene.
+
+Testinformation:
+Chromium durfte in dieser Umgebung keine lokalen HTTP-/file-URLs aufrufen.
+Stattdessen wurde die echte HTML-, CSS- und JavaScript-Basis isoliert in einem
+Browser mit eingelassenen Skripten getestet. Dabei waren 13 Stationen, navigation,
+Werkstatt-Einstieg, Fortschrittsübernahme und mobile/650px-Ansicht erfolgreich.
+Kein Fehler auf der JS-Konsole. GitHub-Pages-Live-Test und echter iPhone-Test
+ausstehend.

@@ -8,23 +8,23 @@ window.PalabraGrammarAudio=(()=>{
  function key(s){return String(s??'').replace(/[⟦⟧]/g,'').trim().normalize('NFC').toLocaleLowerCase('es')}
  let current=null,button=null,mode=null,position=0,queue=[],pauseTimeout=null,epoch=0,paused=false,speed=1;
  function clearVisuals(){
-  document.querySelectorAll('#dialogueArea .chat-line.is-speaking').forEach(x=>x.classList.remove('is-speaking'));
+  document.querySelectorAll('#dialogueArea .chat-line.is-speaking, #p13LearnLesson .chat-line.is-speaking').forEach(x=>x.classList.remove('is-speaking'));
   document.querySelectorAll('[data-dialogue-play].audio-playing,[data-dialogue-line].audio-playing,[data-grammar-say].audio-playing').forEach(x=>{x.classList.remove('audio-playing');x.setAttribute('aria-pressed','false')});
-  const p=document.querySelector('#dialogueArea [data-dialogue-progress]');if(p)p.textContent='';
-  const control=document.querySelector('#dialogueArea [data-dialogue-pause]');if(control){control.disabled=true;control.textContent='⏸ Pause';control.setAttribute('aria-pressed','false')}
+  const p=document.querySelector('#p13LearnLesson [data-dialogue-progress], #dialogueArea [data-dialogue-progress]');if(p)p.textContent='';
+  const control=document.querySelector('#p13LearnLesson [data-dialogue-pause], #dialogueArea [data-dialogue-pause]');if(control){control.disabled=true;control.textContent='⏸ Pause';control.setAttribute('aria-pressed','false')}
  }
  function highlight(idx,dialogueId){
-  document.querySelectorAll('#dialogueArea .chat-line[data-dialogue-turn]').forEach(x=>x.classList.toggle('is-speaking',Number(x.dataset.dialogueTurn)===idx));
-  const p=document.querySelector('#dialogueArea [data-dialogue-progress]');
+  document.querySelectorAll('#dialogueArea .chat-line[data-dialogue-turn], #p13LearnLesson .chat-line[data-dialogue-turn]').forEach(x=>x.classList.toggle('is-speaking',Number(x.dataset.dialogueTurn)===idx));
+  const p=document.querySelector('#p13LearnLesson [data-dialogue-progress], #dialogueArea [data-dialogue-progress]');
   if(p && turns[dialogueId])p.textContent=`Sprechblase ${idx+1} von ${turns[dialogueId].clips.length}`;
-  const control=document.querySelector('#dialogueArea [data-dialogue-pause]');if(control){control.disabled=false;control.textContent=paused?'▶ Fortsetzen':'⏸ Pause';control.setAttribute('aria-pressed',String(paused))}
+  const control=document.querySelector('#p13LearnLesson [data-dialogue-pause], #dialogueArea [data-dialogue-pause]');if(control){control.disabled=false;control.textContent=paused?'▶ Fortsetzen':'⏸ Pause';control.setAttribute('aria-pressed',String(paused))}
  }
  function stop(){
   epoch++;if(pauseTimeout!==null){clearTimeout(pauseTimeout);pauseTimeout=null}
   if(current){try{current.pause();current.removeAttribute('src');current.load()}catch(_){}}
   current=null;button=null;mode=null;position=0;queue=[];paused=false;clearVisuals();
  }
- function alertProblem(message){const label=document.querySelector('#dialogueArea [data-dialogue-progress]');if(label)label.textContent=message;else console.warn(message)}
+ function alertProblem(message){const label=document.querySelector('#p13LearnLesson [data-dialogue-progress], #dialogueArea [data-dialogue-progress]');if(label)label.textContent=message;else console.warn(message)}
  function beginClip(src,b,slow=false){
   stop();window.PalabraAudio?.stop();
   const serial=epoch;mode='single';speed=slow?0.8:1;button=b||null;

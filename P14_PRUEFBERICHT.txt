@@ -1,0 +1,31 @@
+Cuentilo P14 – Prüfbericht
+Version: 0.7a.8-P14
+
+Basis: P13.3 (vollständige GitHub-Version)
+Neue Kurseinträge: 10 A1-Lektionen und 3 Grammatikwerkstätten
+Grammatikhappen: 15 (innerhalb der Vokabelfragen)
+Wort-MC: 120 insgesamt (84 neu in Lektionen 4–10)
+Bestehende Dialoge: 10 / 10 inklusive Audio und Verständnisfragen
+Anwendungsaufgaben: 50 insgesamt (35 neu in Lektionen 4–10)
+Dialogantworten: 30 insgesamt (21 neu in Lektionen 4–10)
+Vorhandene MP3s: 5.991; alle unverändert (keine Neuproduktion)
+Audio-Audit: alle 120 Wort-Karten und sämtliche Grammatikhappen-Beispiele haben eine Aufnahmezuordnung
+
+Automatisierte Prüfungen:
+- node --check auf beiden geänderten Kurs-Skripten bestanden
+- In Chromium ohne externe Seitennavigation 10/10 Lektionen durchgespielt und abgeschlossen
+- 3/3 Grammatikwerkstätten durchgespielt und abgeschlossen
+- Grammatikhappen in regulärem Lektionsfortschritt sichtbar
+- Falsche Vokabelantworten in Wiederholung korrekt abgearbeitet
+- Kein JS-Pageerror in 13 abgeschlossenen Lernpfaden
+- P13.3-Lernstand-Migration und Backup-Wiederherstellung erfolgreich getestet
+- Bekannte Audio-Dateien luna und llamo vorhanden
+- Visuelle Prüfung der dunklen mobilen Darstellung durchgeführt
+
+Grenzen:
+- Kein echter Endgerätetest auf iPhone durchgeführt
+- Audioaufnahmen wurden anhand Manifesten/Dateiexistenz geprüft, nicht jede Aufnahme menschlich abgehört
+- Browsersimulation nutzt eine vom Testbereitsteller isolierte Seite; kein tatsächlicher GitHub-Pages-Deploy durchgeführt
+- Vollständige unabhängige didaktische Feldstudie mit Anfängern steht noch aus
+
+Installation: ZIP entpacken, gesamten Inhalt im Repository-Root übernehmen, committen und pushen.

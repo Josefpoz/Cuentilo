@@ -1,0 +1,31 @@
+CUENTILO P14.1a – DESIGN- UND DATEIPRUEFBERICHT
+Basis: Cuentilo P14.1 Roter Faden (keine Änderungen an Lerninhalten und Audio).
+
+Umgesetzt:
+- 10 neue eigene Bildmotive in assets/lesson-art/lesson-01.webp ... lesson-10.webp.
+- 1 gemeinsame Illustration assets/lesson-art/workshop.webp für drei Grammatikwerkstätten.
+- style-p14-1a.css: Appweite Korall-/Creme-/Nachtblau-Akzente für Stories, Grammar, Vocab.
+- Roter Faden, Kartenaufbau, Apps-Icon und Navigation unverändert.
+- Lernstände und SRS-Logik: Keine Änderung. Feedback für korrekt/falsch semantisch erhalten.
+
+Validierung:
+- Alle 11 Illustrationen geöffnet und identifizierbar.
+- CSS-Parser ohne Syntaxfehler; learn_lesson.js und update.js erfolgreich mit Node --check.
+- In-Memory-Browserprüfung: 13 Stationen, 390px/650px ohne Horizontal-Overflow,
+  gleiche Illustration für Werkstatt A/B/C; Navigation und Fortschrittsanzeige okay;
+  Layout von Grammar und Vocab gerendert; Story-Farben technisch geprüft;
+  keine JS-Fehler.
+- Im Vergleich zu P14.1 identische Dateien: 6039.
+- Alle 5991 Audio-Dateien bytegleich vorhanden.
+- Abweichende alte Dateien ausschließlich Design-Assets (10), README, index,
+  learn_lesson.js (Bildreferenz), update.js (Cacheversion), manifest.webmanifest (Cacheversion).
+- Entfernt: 3 nicht mehr benutzte verschiedene Werkstattgrafiken.
+- Neu: eine gemeinsame Werkstattgrafik, zusätzliche Design-CSS, dieser Bericht.
+
+Grenzen:
+- Kein Test auf einem echten iPhone und kein GitHub-Pages-Deployment.
+- Die neuen Motive sind aus einer gemeinsamen KI-generierten Illustrationserie getrennt
+  und für die kompakten Karten aufbereitet; kein 1:1 Duplikat der Story-Cover.
+
+Installation: ZIP-Inhalt ins Stammverzeichnis des neuen cuentilo-Repositories kopieren,
+vorhandene Dateien überschreiben, committen und pushen. Nicht die ZIP selbst hochladen.

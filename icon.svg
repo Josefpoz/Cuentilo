@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect width="512" height="512" rx="110" fill="#102238"/><rect x="68" y="68" width="376" height="376" rx="94" fill="#86e3bc"/><text x="256" y="349" text-anchor="middle" font-family="Arial,sans-serif" font-size="290" font-weight="bold" fill="#12332e">P</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Cuentilo: offenes Buch mit rotem Erzählfaden">
+<defs><linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#203544"/><stop offset="1" stop-color="#091724"/></linearGradient><linearGradient id="paper" x1="0" y1="0" x2="0.85" y2="1"><stop stop-color="#fff0d7"/><stop offset="1" stop-color="#d4a981"/></linearGradient></defs>
+<rect width="512" height="512" rx="112" fill="url(#night)"/>
+<circle cx="255" cy="249" r="193" fill="#f6a77b" opacity=".055"/>
+<path d="M80 359c75-25 146-18 176 6c31-24 101-31 177-6" fill="none" stroke="#e27563" stroke-width="15" stroke-linecap="round"/>
+<path d="M253 157C206 118 146 117 87 143v190c62-26 122-22 166 17z" fill="url(#paper)" stroke="#da9e7b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M259 157c47-39 107-40 166-14v190c-62-26-122-22-166 17z" fill="url(#paper)" stroke="#da9e7b" stroke-width="6" stroke-linejoin="round"/>
+<path d="M256 151v201" stroke="#bb705d" stroke-width="7" fill="none"/>
+<path d="M119 183c46-11 79-7 107 9M119 213c45-11 78-7 107 9M119 243c42-10 72-7 104 8M286 192c29-16 65-20 107-9M286 222c29-16 65-20 107-9M286 251c29-16 64-18 104-8" stroke="#c69d81" stroke-width="5" opacity=".65" fill="none" stroke-linecap="round"/>
+<path d="M302 343c-19-18-31-41-13-67c16-23 43-25 52-54c8-27-2-48-21-63" stroke="#e86f60" stroke-width="12" stroke-linecap="round" fill="none"/>
+<path d="M319 160c-12-25-7-45 21-56c9 24-4 43-21 56z" fill="#ec8a66"/>
+<path d="M318 158c-20-8-29-23-25-44c20 3 31 19 25 44z" fill="#d4534c"/>
+<path d="M319 160l1-38" stroke="#f8d6ab" stroke-width="3" fill="none"/>
+</svg>
