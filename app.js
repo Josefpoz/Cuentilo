@@ -385,8 +385,13 @@ function updateHome(){
  const allDue=withSelection('all','all','passive',()=>candidates('passive'));
  const allActive=withSelection('all','all','active',()=>candidates('active'));
  $('dailyReviewSummary').textContent=`${allDue.length} passive Karten fällig · ${allActive.length} aktive Karten fällig. Bis zu 20 je Runde.`;
+ $('vocabDuePriority').hidden=!(allDue.length||allActive.length);
+ $('dailyReviewBtn').hidden=!allDue.length;
  $('dailyReviewBtn').disabled=!allDue.length;
- $('dailyReviewBtn').textContent=allDue.length?'Fällige Wörter wiederholen →':'Derzeit nichts fällig ✓';
+ $('dailyReviewBtn').textContent=allDue.length?`${allDue.length} passive Wörter wiederholen →`:'Nichts passiv fällig ✓';
+ $('dailyActiveReviewBtn').hidden=!allActive.length;
+ $('dailyActiveReviewBtn').disabled=!allActive.length;
+ $('dailyActiveReviewBtn').textContent=allActive.length?`${allActive.length} aktive Wörter wiederholen →`:'Nichts aktiv fällig ✓';
  const list=candidates(),due=list.length;
  const regular=/^[0-9]+$/.test(String(selectedPackage));
  const needsDiscovery=regular&&!isPackageComplete(selectedDeck,selectedPackage);
@@ -797,13 +802,14 @@ function navigate(name){
  if(name==='vocab' && current && queue.length) { /* Switching views preserves an unfinished session. */ }
  if(name==='grammar' && window.PalabraGrammar)PalabraGrammar.render();
  if(name==='practice-lab')window.CuentiloPractice?.render();
+ if(name==='learn-lesson')window.CuentiloLearnLesson?.render();
  if(name==='form-studio')window.CuentiloFormStudio?.render();
  if(name==='dialogues')PalabraDialogues.render(data,save,navigate);
  if(name==='stories')window.PalabraStories.render(data,save,navigate);
  document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===name));
- document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===(name==='learn'||name==='words'?'vocab':(name==='dialogues'||name==='practice-lab'||name==='form-studio')?'learn-hub':name)));
+ document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===(name==='learn'||name==='words'?'vocab':(name==='dialogues'||name==='practice-lab'||name==='form-studio'||name==='learn-lesson')?'learn-hub':name)));
  if(name==='vocab')showLearnScreen('overview');
- if(name==='learn-hub')PalabraDialogues.renderHome(data,navigate);
+ if(name==='learn-hub'){PalabraDialogues.renderHome(data,navigate);window.CuentiloLearnLesson?.renderHome();}
  if(name==='words')renderWords();
  if(name==='settings')renderDevControls();
  if(name==='learn'&&!current&&queue.length===0)renderStudy();
@@ -827,6 +833,8 @@ $('browseBack').onclick=()=>showLearnScreen('deck');
 $('browseLaunch').onclick=openPackageBrowse;
 $('discoverLaunch').onclick=()=>openDiscovery();
 $('dailyReviewBtn').onclick=startDailyReview;
+$('dailyActiveReviewBtn').onclick=()=>{selectedDeck='all';selectedPackage='all';selectedCategory='all';selectedDirection='active';startSession(candidates('active'))};
+$('p13BackToLearn').onclick=()=>navigate('learn-hub');
 $('openDialogues').onclick=()=>navigate('dialogues');
 $('openPracticeLab').onclick=()=>navigate('practice-lab');
 $('openFormStudioLearn').onclick=()=>window.CuentiloFormStudio.open({source:'learn-hub'},navigate);
@@ -840,11 +848,19 @@ $('devModeToggle').onchange=e=>{devMode=e.target.checked;try{localStorage.setIte
 $('passiveMode').onclick=()=>{selectedDirection='passive';data.settings.lastDirection='passive';save();updateHome()};$('activeMode').onclick=()=>{selectedDirection='active';data.settings.lastDirection='active';save();updateHome()};
 $('exitLearn').onclick=()=>navigate('vocab');$('wordSearch').oninput=debounceWordsSearch;$('wordStatus').onchange=renderWordsImmediately;$('wordLevel').onchange=renderWordsImmediately;$('statsPassive').onclick=()=>{statsDirection='passive';renderWords()};$('statsActive').onclick=()=>{statsDirection='active';renderWords()};
 function download(content,name,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000)}
-$('exportBtn').onclick=()=>{download(JSON.stringify({...data,grammarA1:window.PalabraGrammarA1?.progress()||undefined,practiceP9:window.CuentiloPractice?.exportState(),exportedAt:new Date().toISOString()},null,2),`Cuentilo-Backup-${iso()}.json`,'application/json');$('backupMessage').textContent='Backup erstellt. Bitte in „Dateien“ sicher aufbewahren.'};
-$('importBackup').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;const el=$('backupMessage');try{const parsed=validate(JSON.parse(await f.text()));if(!confirm(`Backup mit ${parsed.words.length} Wörtern laden? Dein aktueller lokaler Lernstand wird dadurch ersetzt.`))return;data=parsed;normalizeCollections();normalizeDiscovery();selectedCollectionId=null;collectionQuery='';pickerWordId=null;if(data.settings.dailyNew===10)data.settings.dailyNew=20;syncCuratedDecks();if(!Number.isFinite(data.settings.extraBlocks))data.settings.extraBlocks=0;reconcileUnlocks();normalizeCollections();save();if(parsed.grammarA1&&window.PalabraGrammarA1)window.PalabraGrammarA1.restore(parsed.grammarA1);if(parsed.practiceP9&&window.CuentiloPractice)window.CuentiloPractice.restoreState(parsed.practiceP9);el.className='notice';el.textContent='Backup erfolgreich wiederhergestellt.';updateHome()}catch(err){el.className='notice error';el.textContent='Import fehlgeschlagen: '+err.message}finally{e.target.value=''}};
+$('exportBtn').onclick=()=>{download(JSON.stringify({...data,grammarA1:window.PalabraGrammarA1?.progress()||undefined,practiceP9:window.CuentiloPractice?.exportState(),learnP13:window.CuentiloLearnLesson?.exportState(),exportedAt:new Date().toISOString()},null,2),`Cuentilo-Backup-${iso()}.json`,'application/json');$('backupMessage').textContent='Backup erstellt. Bitte in „Dateien“ sicher aufbewahren.'};
+$('importBackup').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;const el=$('backupMessage');try{const parsed=validate(JSON.parse(await f.text()));if(!confirm(`Backup mit ${parsed.words.length} Wörtern laden? Dein aktueller lokaler Lernstand wird dadurch ersetzt.`))return;data=parsed;normalizeCollections();normalizeDiscovery();selectedCollectionId=null;collectionQuery='';pickerWordId=null;if(data.settings.dailyNew===10)data.settings.dailyNew=20;syncCuratedDecks();if(!Number.isFinite(data.settings.extraBlocks))data.settings.extraBlocks=0;reconcileUnlocks();normalizeCollections();save();if(parsed.grammarA1&&window.PalabraGrammarA1)window.PalabraGrammarA1.restore(parsed.grammarA1);if(parsed.practiceP9&&window.CuentiloPractice)window.CuentiloPractice.restoreState(parsed.practiceP9);if(parsed.learnP13&&window.CuentiloLearnLesson)window.CuentiloLearnLesson.restoreState(parsed.learnP13);el.className='notice';el.textContent='Backup erfolgreich wiederhergestellt.';updateHome()}catch(err){el.className='notice error';el.textContent='Import fehlgeschlagen: '+err.message}finally{e.target.value=''}};
 function parseCSV(text){const out=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){cell+='"';i++}else quoted=!quoted}else if(c===','&&!quoted){row.push(cell);cell=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(cell);if(row.some(x=>x.trim()))out.push(row);row=[];cell=''}else cell+=c}row.push(cell);if(row.some(x=>x.trim()))out.push(row);return out}
 $('importCsv').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;const el=$('csvMessage');try{const rows=parseCSV((await f.text()).replace(/^\uFEFF/,''));const headers=rows.shift().map(s=>s.trim().toLowerCase());const find=(...keys)=>headers.findIndex(x=>keys.includes(x));const es=find('spanisch','es'),de=find('deutsch','de'),ex=find('beispiel_es','beispiel'),cat=find('kategorie','category');if(es<0||de<0)throw Error('Spalten „Spanisch“ und „Deutsch“ fehlen.');let added=0;const existing=new Set(data.words.map(w=>w.es.trim().toLocaleLowerCase()));for(const r of rows){const spanish=(r[es]||'').trim(),german=(r[de]||'').trim();if(!spanish||!german||existing.has(spanish.toLocaleLowerCase()))continue;data.words.push({id:'w-'+Date.now().toString(36)+'-'+added,es:spanish,de:german,example:ex>=0?(r[ex]||'').trim():'',category:cat>=0?(r[cat]||'Alltag').trim():'Alltag',progress:newProgress()});existing.add(spanish.toLocaleLowerCase());added++}save();el.className='notice';el.textContent=`${added} neue Wörter importiert.`;updateHome()}catch(err){el.className='notice error';el.textContent='CSV-Import fehlgeschlagen: '+err.message}finally{e.target.value=''}};
 function refreshClock(){ $('todayDate').textContent=new Intl.DateTimeFormat('de-DE',{day:'numeric',month:'short'}).format(new Date());if(document.getElementById('home').classList.contains('active'))updateHome()}
-PalabraDialogues.renderHome(data,navigate);updateHome();refreshClock();document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshClock()});window.addEventListener('focus',refreshClock);
+PalabraDialogues.renderHome(data,navigate);window.CuentiloLearnLesson?.renderHome();updateHome();refreshClock();document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshClock()});window.addEventListener('focus',refreshClock);
+// Explicit bridge: Learn lessons may open the matching canonical Vocab package;
+// this only navigates and NEVER marks SRS cards as introduced, known or due.
+window.CuentiloVocabOpenPackage=(deckId,packageInDeck)=>{
+ const match=data.words.find(w=>w.deck_id===deckId&&Number(w.package_in_deck)===Number(packageInDeck));
+ if(!match)return navigate('vocab');
+ selectedDeck=deckId;selectedPackage=String(match.package);selectedCategory='all';
+ navigate('vocab');showLearnScreen('setup');
+};
 window.CuentiloNavigate=navigate;
 })();

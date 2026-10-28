@@ -1,0 +1,87 @@
+/* Cuentilo P14.1a – konsistente visuelle Identität
+   Only presentation; never overwrite correctness/error semantics or story grammar role colors.
+   P14.1's Red Thread layout remains unchanged. */
+:root{
+ --ct-night:#0a1725; --ct-night-deep:#07111e; --ct-panel:#162838;
+ --ct-coral:#e97969; --ct-coral-strong:#d95b55; --ct-cream:#f8e8d5;
+ --ct-gold:#d6a66c; --ct-inkmuted:#cbb8ad;
+ accent-color:var(--ct-coral);
+}
+/* Global interactive surfaces, nav, and emphasis (exclude right/wrong answer states). */
+:where(.eyebrow,.flashcard .direction,.learn-step-back,.pillar-link,.percent,.word-row small,.story-kicker,.story-lexicon-title>span,.gram-subtle,.gram-chevron,.gram-back,.gram-lab-kicker,.gram-inspection .gram-kicker,.gram-explanation,.a1-module-description em,.gram-lesson-desc em,.a1-mod-meta,.gram-a1-launch em,.story-vocab-kicker){color:#efa08b}
+:where(.top-pill,.tag,.deck-chip){border-color:#805851;background:rgba(216,101,85,.12);color:#f4c3ab}
+:where(.primary,.ct-continue){background:linear-gradient(130deg,#ee8873,#d86658);color:#211d26;border-color:#ed9a86}
+:where(.secondary,.file-label){background:#29394b;border-color:#5c5a64;color:#f6e6d3}
+:where(.mode.selected,.deck-tile.is-selected,.learn-category-chip.chosen,.words-subtabs button.selected,.story-level-choice.selected,.story-chapter-tab.selected,.story-vocab-index-grid button.active,.p9-option.is-selected,.p9-ending.is-selected,.fs-person-row.selected,.p13-choice.is-selected,.p13-selected-tile,.p131-selected-tile){background:#533b43;border-color:#dd826d;color:#ffe8d7;box-shadow:inset 0 0 0 1px rgba(240,142,116,.10)}
+:where(.mode.selected small,.deck-tile.is-selected small){color:#edc6b6}
+:where(.progress>div,.p13-meter span,.p14-workshop .p13-meter>span,.unlock-track>div,.mini-track span,.learn-mini-progress span,.story-progress-track span,.story-vocab-track>span,.a1-progress span,.gram-mini-track span.is-current,.ct-station-mini>span){background:linear-gradient(90deg,#d9665a,#f09a7e)}
+:where(.deck-check,.session-stats strong,.story-progress-note,.story-question-number,.a1-module-number,.gram-lesson-no,.learn-deck-number,.learn-pack-number,.learn-review-icon,.learn-daily-dot,.story-vocab-count){color:#f1ae95}
+:where(.learn-deck-number,.learn-pack-number,.learn-review-icon,.learn-daily-dot,.gram-path-icon,.gram-lesson-no,.a1-module-number,.gram-a1-mark,.pron-topic-number){background:#4c3945;color:#f4b7a1}
+:where(.learn-deck-card,.learn-pack-card,.learn-review-link,.gram-lesson-card,.a1-module-card,.story-shelf-card){background:linear-gradient(145deg,#1b2e40,#152636);border-color:#4c5060;color:#f7e6d7}
+:where(.learn-deck-card:hover,.learn-pack-card:hover,.learn-review-link:hover,.gram-lesson-card:hover,.a1-module-card:hover){border-color:#d98370;background:linear-gradient(145deg,#263849,#1d3040)}
+:where(.learn-pack-featured){background:#3c313d;border-color:#d58070}
+:where(.learn-pack-featured .learn-pack-number){background:#a95d55;color:#fff0df}
+:where(.story-questions-toggle,.story-next-section .primary,.story-vocab-open,.learn-review-link){border-color:#a5756b}
+:where(.learn-deck-card,.learn-pack-card,.learn-review-link,.story-shelf-card,.a1-module-card,.gram-lesson-card){box-shadow:0 5px 16px rgba(2,9,18,.10)}
+:where(button:focus-visible,[role="button"]:focus-visible,.story-level-choice:focus-visible,.gram-lesson-card:focus-visible,.a1-module-card:focus-visible,.learn-deck-card:focus-visible,.learn-pack-card:focus-visible){outline:3px solid #ffb099;outline-offset:3px}
+:where(.setting-row input,.dev-switch input,.gram-role-switch input){accent-color:#e97969}
+/* Stories: shelf metadata, genre/chapter label, level selector, and vocabulary discovery. */
+#stories .stories-shelf-intro{background:linear-gradient(140deg,#253343,#1b2938);border-color:#765b56}
+#stories .stories-mini-icon{color:#f2a78f;background:#543d46;border-color:#8a5f56}
+#stories .story-kicker{color:#edaa8f}
+#stories .story-level-choice{background:#243546;color:#e0ccbd;border:1px solid #5a5b68}
+#stories .story-level-choice.selected{background:#694147;color:#fff2df;border-color:#ee927b;box-shadow:inset 0 0 0 1px #b46a61}
+#stories .story-level-choice:focus-visible{outline-color:#f8a08a}
+#stories .story-progress-note{color:#d7b7a7}
+#stories .story-progress-track span{background:linear-gradient(90deg,#c65d54,#ef9782)}
+#stories .story-shelf-actions .story-vocab-open{background:#453641;border-color:#91695f;color:#ffe4d2}
+#stories .story-vocab-open small{color:#e6b9a7}
+#stories .story-chapter-tab{background:#233646;border-color:#54596a;color:#e5cbbc}
+#stories .story-chapter-tab.selected{background:#6c4349;border-color:#ed9078;color:#ffebd8}
+#stories .story-reader-indicator{color:#eeb49d}
+#stories .story-cover{border-color:#916d66}
+/* The actual paper reader and grammatical role highlighting intentionally stay readable and semantic. */
+/* Vocab: progress, deck/packs and review priority. */
+#vocab .p131-due-priority{background:linear-gradient(145deg,#46313e,#192b3d);border:2px solid #d88470}
+#vocab .p131-due-priority .tag{background:#70474b;color:#fff0da;border-color:#bb786d}
+#vocab .home-streak{background:#202f40;border-color:#755654}
+#vocab .learn-daily-route{background:#263746;border-color:#795d58}
+#vocab .learn-daily-dot{background:#70474b;color:#ffe2d2}
+#vocab .learn-mini-progress span{background:linear-gradient(90deg,#c85f57,#ef9b81)}
+#vocab .learn-deck-card:nth-child(2n) .learn-deck-number{background:#57414d;color:#f7cfbb}
+#vocab .learn-deck-card:nth-child(3n) .learn-deck-number{background:#59453f;color:#f3d0b1}
+#vocab .learn-deck-card:nth-child(4n) .learn-deck-number{background:#344252;color:#edc4b3}
+#vocab .learn-pack-featured{border-color:#d6806a;background:linear-gradient(135deg,#403240,#1e2e3c)}
+#vocab .learn-pack-featured .learn-pack-number{background:#a85854;color:#ffe7d2}
+#vocab .learn-category-chip.chosen{background:#613e46;border-color:#db8d77;color:#fbe7d6}
+#vocab .mode.selected{background:#533a44;border-color:#dc8976;color:#ffe0d0}
+#vocab .mode.selected small{color:#efc2b1}
+#vocab .learn-review-icon{background:#563b46;color:#f4b7a1}
+#words .words-subtabs button.selected{background:#5b3e45;border-color:#df8871;color:#ffe7d5}
+#words .collection-tile-icon,#words .word-add-button,#words .collection-icon-action{background:#513b46;border-color:#956c62;color:#f4baa4}
+#words .percent{color:#f3ae95}
+#words .unlock-track>div,#words .mini-track span{background:linear-gradient(90deg,#c85d55,#efa183)}
+/* Grammar: module tiles, course controls, progress, discovery – success feedback remains green. */
+#grammar .gram-path-intro{background:linear-gradient(135deg,#263747,#1b2b3a);border-color:#7a5e59}
+#grammar .gram-path-icon{background:#64414a;color:#f4ad95}
+#grammar .gram-lesson-card{background:linear-gradient(125deg,#203345,#162838);border-color:#59586a}
+#grammar .gram-lesson-no{background:#573f48;color:#f2b29b}
+#grammar .gram-lesson-desc em,#grammar .gram-chevron,#grammar .gram-back{color:#eca58c}
+#grammar .gram-mini-track span.is-current{background:#ed8c75}
+#grammar .gram-a1-launch{background:linear-gradient(135deg,#513843,#263445);border:1px solid #bd776a;color:#f8ebdd}
+#grammar .gram-a1-mark{background:#8a5552;color:#fff2df}
+#grammar .gram-a1-launch em{color:#ffc2a6}
+#grammar .a1-count{background:#433842;border-color:#86615b}
+#grammar .a1-count>strong{color:#fac4aa}
+#grammar .a1-progress span{background:#e98270}
+#grammar .a1-module-card{background:linear-gradient(140deg,#203345,#182a3d);border-color:#585669}
+#grammar .a1-module-number{background:#573e49;color:#f4b59b}
+#grammar .a1-module-description em{color:#efa68d}
+#grammar .a1-lab-switch button.chosen,#grammar .a1-choices button.selected,#grammar .gram-choice.selected,#grammar .gram-token.chosen,#grammar .gram-role-token.chosen{background:#593c46;border-color:#d68a73;color:#ffe4d3}
+#grammar .gram-minor-action,#grammar .gram-compact-action{background:#4a3a48;border-color:#936a67;color:#ffe3d3}
+#grammar .gram-a1-launch:focus-visible,#grammar .a1-module-card:focus-visible{outline-color:#ffb39b}
+/* Vocab choice/grammar task selection is visual navigation; answer correctness remains green. */
+.deck-chip{color:#f5bba6;background:#59414a}
+.deck-tile.is-selected{background:#453944;border-color:#e18d78}
+.deck-check{color:#f0a58d}
+/* Warnings/successes keep their semantic green/red states, never re-theme actual correctness. */

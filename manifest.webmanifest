@@ -1,1 +1,23 @@
-{"name":"Cuentilo","short_name":"Cuentilo","description":"Spanisch lernen mit Geschichten, Grammatik und Wortschatz","start_url":"./index.html?v=07a8p6","scope":"./","display":"standalone","background_color":"#0b1423","theme_color":"#101b2d","lang":"de","icons":[{"src":"cuentilo-icon-192.png","sizes":"192x192","type":"image/png"},{"src":"cuentilo-icon-512.png","sizes":"512x512","type":"image/png"}]}
+{
+  "name": "Cuentilo",
+  "short_name": "Cuentilo",
+  "description": "Spanisch lernen mit Geschichten, Grammatik und Wortschatz",
+  "start_url": "./index.html?v=07a8p141a",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a1825",
+  "theme_color": "#0c1928",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "cuentilo-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "cuentilo-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

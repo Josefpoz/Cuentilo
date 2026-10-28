@@ -1,0 +1,130 @@
+/* Cuentilo P14.1 | Der rote Faden
+   Visual design proof-of-concept. The older CSS remains intact so Stories,
+   Vocab, Grammar and all learning mechanics preserve their layouts. */
+:root{
+  --ct-night:#0a1725;--ct-night-deep:#07111e;--ct-panel:#162838;
+  --ct-border:#354557;--ct-coral:#ec786a;--ct-coral-strong:#d95b55;
+  --ct-cream:#f8e8d5;--ct-muted:#c4b7ad;--ct-olive:#7c9d88;
+  --accent:#ec786a;
+  color:var(--ct-cream);
+  background:var(--ct-night);
+}
+body{color:var(--ct-cream);background:
+  radial-gradient(ellipse at 30% -15%,rgba(131,66,73,.30) 0,transparent 49%),
+  radial-gradient(ellipse at 99% 45%,rgba(98,78,69,.12) 0,transparent 44%),
+  var(--ct-night-deep)}
+.app{position:relative}
+.top{height:76px;border-bottom:1px solid rgba(241,185,145,.09)}
+.brand .logo,.brand .logo img{width:44px;height:44px;border-radius:13px}
+.brand strong{font-family:Georgia,serif;font-weight:700;font-size:26px;letter-spacing:-.7px;color:var(--ct-cream)}
+.brand small{color:#b7a99f}
+.top-pill,.tag{color:#e3c4af;border-color:#5a4748;background:rgba(223,111,94,.06)}
+.eyebrow{color:#ed9482}
+.hero h1,.section-head h1,.pillar-hero h1{font-family:Georgia,serif;color:var(--ct-cream);letter-spacing:-.8px}
+.hero p,.section-head p,.muted,.footnote,.pillar-footnote{color:#c1b5ae}
+.panel,.stat{background:linear-gradient(150deg,#182a3b,#122332);border-color:#354357}
+.primary{background:linear-gradient(135deg,#ef8470,#dd695e);color:#211923;border-color:#ef9282;box-shadow:0 6px 18px rgba(179,60,54,.12)}
+.primary:hover:not(:disabled){filter:brightness(1.07)}
+.secondary,.file-label{background:#29394b;color:#f7e5d5;border-color:#526074}
+.ghost{color:#d9c9be;border-color:#485366}
+button:focus-visible,.file-label:focus-visible,[role="button"]:focus-visible{outline:3px solid #f1a28b;outline-offset:3px}
+.bottom-nav{background:rgba(9,22,35,.97);border-top:1px solid #4a3e44;box-shadow:0 -12px 32px rgba(4,9,15,.28)}
+.nav{color:#a89e9c}.nav.active{color:#ff8c7a}
+.nav.active span{filter:drop-shadow(0 0 10px rgba(241,100,86,.23))}
+.pillar-hero{position:relative;overflow:hidden;margin-top:8px;padding:27px 17px 28px;border-radius:23px;background:
+  linear-gradient(90deg,rgba(8,21,34,.88),rgba(8,21,34,.24)),
+  url('assets/story-covers/coco.webp') center 43%/cover no-repeat;
+  border:1px solid rgba(240,159,125,.2)}
+.pillar-hero h1{font-size:40px;text-shadow:0 2px 9px #07111f}
+.pillar-hero p{color:#f0dccc;font-weight:580}
+.pillar-card{background:linear-gradient(140deg,#1c2e3c,#132435);border:1px solid #425061}
+.pillar-card:hover{border-color:#cc7e6a;background:#243545}
+.pillar-description strong{color:var(--ct-cream);font-family:Georgia,serif;font-weight:700}
+.pillar-description small{color:#c9bdb4}
+.pillar-link{color:#f0a08e}
+.pillar-icon{background:#3b3a40!important;color:#f6b19d!important}
+.pillar-learn{background:#593539!important}.pillar-stories{background:#33434c!important}.pillar-vocab{background:#3c4a45!important}
+.pillar-grammar{background:#414057!important}
+/* Keep success feedback green for meaning, but make navigational accents coral. */
+.progress>div,.p13-meter>span,.p14-workshop .p13-meter>span{background:var(--ct-coral)}
+.p13-meta{color:#e1c6b6}.learn-step-back{color:#ffad99}
+.p13-card,.p14-workshop{border-color:#465264}
+.p13-choice{background:#1c2d3e;color:#f5e9df;border-color:#536070}
+.p13-choice-id{background:#3d4252;color:#f8e9d8}
+.p13-choice:focus-visible{outline:2px solid #f29783}
+.p13-selected-tile,.p13-tile{background:#594144;color:#fbe7de;border-color:#ab7970}
+.p131-dialogue-question{border-color:#8e6967;background:#2e343f}
+.p131-dialogue-question strong{color:#f1b4a1}
+.p13-mini-btn{color:#fbe4d5;border-color:#81676a;background:#463e4c}
+/* The actual course: continuous vertical coral thread with staggered stations. */
+#learn-hub{padding-bottom:20px}
+.ct-path-hero{position:relative;padding:28px 18px 20px;margin:17px 0 24px;overflow:hidden;
+  border-radius:24px;border:1px solid #604b50;background:
+  linear-gradient(90deg,rgba(14,27,40,.95) 4%,rgba(14,27,40,.76) 64%,rgba(14,27,40,.46)),
+  url('assets/story-covers/la-casa-miercoles.webp') center 43%/cover no-repeat;
+  box-shadow:0 14px 40px rgba(0,0,0,.18)}
+.ct-path-hero::after{content:'✦';position:absolute;right:20px;top:24px;color:#f2bba3;font-size:20px;opacity:.75}
+.ct-path-hero h1{font-size:clamp(32px,8vw,44px);line-height:1.11;margin:11px 0 7px;font-family:Georgia,serif;font-weight:700;color:#ffebd6}
+.ct-path-hero>p{color:#e4c7b5;line-height:1.5;margin:0 0 22px;font-size:14px}
+.ct-path-progress{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px 15px 16px;border:1px solid #775d5d;border-radius:15px;background:rgba(9,22,33,.78);backdrop-filter:blur(5px)}
+.ct-path-progress>div:first-child{display:flex;flex-direction:column;gap:3px}
+.ct-path-progress strong{font-size:14px;color:#f7e7d5}
+.ct-path-progress small{font-size:11px;color:#c8ae9f}
+.ct-path-progress>strong{color:#ffad95;align-self:center;font-size:17px}
+.ct-path-progress-bar{grid-column:1/-1;height:6px;border-radius:20px;background:#4a4148;overflow:hidden}
+.ct-path-progress-bar span{display:block;background:linear-gradient(90deg,#dc6159,#f39c83);height:100%;width:0;transition:width .3s ease;border-radius:20px}
+.ct-continue{display:flex;justify-content:space-between;align-items:center;width:100%;min-height:46px;cursor:pointer;margin-top:12px;padding:11px 16px;border:1px solid #ec9881;border-radius:12px;color:#fff0df;background:linear-gradient(110deg,#bc5551,#d96f61);font-size:14px;font-weight:750}
+.ct-continue span{font-size:20px}
+.ct-path-section-title{display:flex;align-items:end;justify-content:space-between;margin:24px 4px 10px}
+.ct-path-section-title h2{font-family:Georgia,serif;font-size:25px;margin:6px 0 0;letter-spacing:-.3px;color:#fff0da}
+.ct-path-section-title>span{color:#e78573;font-size:23px;opacity:.8}
+.ct-course-path{position:relative;padding:8px 0 16px;margin-bottom:8px}
+.ct-course-path::before{content:'';position:absolute;top:15px;bottom:25px;left:26px;width:4px;border-radius:6px;background:linear-gradient(180deg,#f09b81 0%,#c75b55 38%,#b6605a 70%,#63515b 100%);box-shadow:0 0 14px rgba(221,109,94,.32)}
+.ct-station{position:relative;padding:0 0 0 59px;margin:0 0 13px;min-height:105px}
+.ct-station::after{content:'';position:absolute;top:50px;left:28px;width:29px;height:2px;background:#a66b67;opacity:.6}
+.ct-station-node{position:absolute;z-index:2;left:10px;top:35px;width:36px;height:36px;display:grid;place-items:center;border-radius:50%;border:2px solid #826c6a;background:#19283b;color:#bda49c;font-size:17px;font-weight:800;box-shadow:0 0 0 3px #0d1c2c}
+.ct-station.ct-done .ct-station-node{background:#395a48;color:#e5f3d7;border-color:#95b4a0}
+.ct-station.ct-current .ct-station-node{background:#d9655b;color:#fef0df;border-color:#ffc6a8;box-shadow:0 0 0 4px #1b2a38,0 0 23px rgba(230,104,91,.65)}
+.ct-station.ct-workshop .ct-station-node{font-size:15px}
+.ct-station-card{width:100%;min-height:105px;appearance:none;position:relative;display:flex;align-items:center;gap:11px;text-align:left;overflow:hidden;
+  border:1px solid #465160;background:linear-gradient(135deg,#1a2e3d,#142533);border-radius:17px;padding:10px;color:#f5dfc9;cursor:pointer;box-shadow:0 7px 18px rgba(0,0,0,.14);transition:border .16s,transform .16s,background .16s}
+.ct-station-card:hover{border-color:#e58d78;background:linear-gradient(135deg,#243a49,#182f3b)}
+.ct-station-card:active{transform:scale(.989)}
+.ct-station-image{width:74px;height:84px;flex:0 0 74px;object-fit:cover;border-radius:11px;filter:saturate(.91);border:1px solid #a38b79;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.ct-station-copy{min-width:0;flex:1;display:flex;flex-direction:column;gap:5px}
+.ct-station-kicker{font-size:11px;color:#e5a28f;line-height:1.15;font-weight:700}
+.ct-station-copy>strong{font-family:Georgia,serif;color:#f5e9d5;font-size:clamp(17px,4.7vw,20px);line-height:1.13;letter-spacing:-.2px}
+.ct-station-subtitle{font-size:11px;line-height:1.37;color:#bdafa7}
+.ct-station-mark{color:#e3a28d;font-size:21px;align-self:center;flex-shrink:0;line-height:1}
+.ct-station.ct-done .ct-station-mark{color:#aac7a1;font-size:17px}
+.ct-station.ct-current .ct-station-card{border-color:#f08b77;background:linear-gradient(110deg,#352d38,#242b3b);box-shadow:0 0 0 1px rgba(248,130,111,.35),0 0 23px rgba(211,82,75,.16)}
+.ct-station.ct-upcoming .ct-station-card{opacity:.83}
+.ct-station.ct-upcoming .ct-station-image{filter:saturate(.60)}
+.ct-station.ct-workshop .ct-station-card{background:linear-gradient(135deg,#26343b,#1a2a39);border-color:#8c7567}
+.ct-station.ct-workshop .ct-station-kicker{color:#f2c6a1}
+.ct-station-mini{height:4px;border-radius:6px;background:#4c4650;margin-top:3px;overflow:hidden;max-width:98%}
+.ct-station-mini>span{height:100%;background:#e87868;display:block;border-radius:6px}
+.ct-trial-note{color:#a9a4a3;font-size:12px;text-align:center;line-height:1.5;padding:2px 9px 19px}
+.ct-extra-tools{border:1px solid #485164;background:#192a3b;border-radius:18px;padding:0 13px;margin:8px 0 20px}
+.ct-extra-tools>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:14px;padding:17px 3px;color:#efd6c3}
+.ct-extra-tools>summary::-webkit-details-marker{display:none}
+.ct-extra-tools[open]>summary{border-bottom:1px solid #455263}
+.ct-extra-tools .panel{margin:14px 0;padding:14px}
+@media(min-width:550px){
+  .ct-course-path::before{left:50%;transform:translateX(-50%)}
+  .ct-station{padding:0;width:calc(50% - 31px);min-height:112px;margin-bottom:11px}
+  .ct-station:nth-child(even){margin-left:calc(50% + 31px)}
+  .ct-station:nth-child(odd){margin-right:calc(50% + 31px)}
+  .ct-station-node{left:calc(100% + 13px)}
+  .ct-station:nth-child(even) .ct-station-node{left:-50px}
+  .ct-station::after{left:100%;width:24px}
+  .ct-station:nth-child(even)::after{left:-30px;width:27px}
+  .ct-station-card{min-height:112px;gap:9px}
+  .ct-station-image{flex-basis:71px;width:71px;height:90px}
+  .ct-station-copy>strong{font-size:17px}
+  .ct-station:nth-child(even) .ct-station-image{order:2}
+  .ct-station:nth-child(even) .ct-station-copy{order:1}
+  .ct-station:nth-child(even) .ct-station-mark{order:3}
+}
+@media(max-width:385px){.ct-station-image{width:65px;flex-basis:65px;height:78px}.ct-station-card{gap:8px;padding:8px}.ct-station-copy>strong{font-size:17px}.ct-station-subtitle{font-size:10px}.ct-station-mark{font-size:17px}.ct-station{padding-left:54px}.ct-station::after{width:24px}}
+@media(prefers-reduced-motion:reduce){.ct-path-progress-bar span,.ct-station-card{transition:none}}

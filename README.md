@@ -1,24 +1,16 @@
-# Cuentilo — P12.1
+# Cuentilo P14.1a — Einheitliche Bild- & Farbwelt
 
-Spanisch lernen mit Geschichten, Vokabular, Grammatik, Satzwerkstatt und Formenwerkstatt.
+Komplette GitHub-Pages-Version (Root-Verzeichnis). P14.1a ändert ausschließlich Design und Illustrationen, nicht die Lernlogik.
 
-## Veröffentlichung auf GitHub Pages
+- 10 thematisch eigenständige, impressionistische Lektionsbilder (`assets/lesson-art/lesson-01.webp` bis `lesson-10.webp`).
+- Eine gemeinsame Werkstattillustration (`assets/lesson-art/workshop.webp`) für alle 3 Grammatikwerkstätten.
+- Gleiche Anordnung und Bedienung des P14.1-Lernpfads.
+- `style-p14-1a.css` ergänzt die Gestaltung in Stories, Grammar, Vocab, Fortschritts- und Auswahlflächen um Nachtblau, Koralle und Creme. Richtig-/Falsch-Feedback bleibt semantisch unterscheidbar.
+- Vorhandenes Buch-/Faden-Appsymbol beibehalten.
+- Kein Eingriff in lokale Lernstände, SRS-Daten, Audio, Stories oder bestehende Grammatik-/Aufgabendaten.
 
-1. Neues öffentliches Repository erstellen, z. B. `cuentilo` (am besten ohne initiales README, da dieses Paket eine eigene README enthält).
-2. **Den Inhalt** dieser ZIP entpacken. Die `index.html` muss direkt im Stamm des Repositorys liegen, nicht in einem Unterordner.
-3. Die entpackten Dateien per Git/GitHub Desktop hochladen und auf `main` pushen. 6000+ Dateien sind zu viel für einen komfortablen Upload im Browser.
-4. In **Settings → Pages → Build and deployment**: **Deploy from a branch**, Branch **main**, Ordner **/(root)**.
-5. Die Datei `.nojekyll` muss im Repository-Stamm erhalten bleiben. Sie verhindert eine unnötige Jekyll-Verarbeitung der statischen App.
-6. Die neue Seite ist standardmäßig unter `https://<OWNER>.github.io/<REPOSITORY>/` erreichbar.
+## Installation
+Gesamten ZIP-Inhalt ins neue `cuentilo`-Repository (Root) kopieren, mit vorhandenen Dateien überschreiben, committen, pushen. `index.html` und `.nojekyll` gehören ins Root. Nach Deploy ggf. unter Einstellungen → Updates „Aktuelle Version neu laden“ betätigen.
 
-## Achtung: Browser-Lernstand
-
-Der Lernstand wird im Browser mittels `localStorage` gespeichert. Die bestehenden Keys sind absichtlich NICHT geändert, damit SRS, Grammatik- und Übungsstände kompatibel bleiben.
-
-Wenn alte Palabra- und neue Cuentilo-Seite auf der gleichen Domain (z. B. `josefpoz.github.io`) laufen, greifen sie im gleichen Browserprofil auf die gleichen lokalen Speicherbereiche zu, auch wenn sich der Repo-Pfad unterscheidet. Vor dem Wechsel bitte ein Backup aus der App exportieren.
-
-Eine andere Domain, ein anderes Browserprofil oder eine eigenständig installierte iOS-Web-App kann abweichende lokale Daten haben. Für künftige Unabhängigkeit wäre eine geplante Speichermigration erforderlich.
-
-## Inhalt
-
-Dies ist eine vollständige, unveränderte P12.1-Anwendung ohne historische Änderungs- und Testberichte im Veröffentlichungsverzeichnis. Alle Runtime-Dateien, Story-Annotationen, Audioaufnahmen, IDs und Persistenzformate sind gegenüber P12.1 unverändert. Keine API-Schlüssel in dieses öffentliche Repo hochladen.
+## Qualität
+Automatische Syntax-, Pfad-, Bild- und ZIP-Integritätsprüfung; echte Geräte-/iPhone-Tests durch Nutzer stehen aus. Die Bilder entstanden aus einem generierten, zusammengehörigen Illustrations-Board, nicht aus den Story-Covern.

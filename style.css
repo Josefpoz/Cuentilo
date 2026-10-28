@@ -890,3 +890,121 @@ button.pillar-card:focus-visible {outline:3px solid #83dbc1;outline-offset:3px;}
 .fs-picker-hint{font-size:12px;color:#b6cbd2;line-height:1.45;margin:8px 0 0}
 @media(min-width:700px){.fs-tense-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.fs-person-grid{grid-template-columns:repeat(6,minmax(0,1fr))}}
 @media(max-width:390px){.fs-picker-section{padding:11px}.fs-mood-grid .fs-choice-card{font-size:11px;padding:8px 2px}.fs-person-grid .fs-choice-card{font-size:12px;padding:7px 2px}}
+
+/* P13 · A1 Learn lesson: accessible, responsive cards, independent of Vocab/SRS */
+.p13-lesson-entry{border-color:#3b766a;background:linear-gradient(150deg,#193849,#14263c)}
+.p13-lesson-entry .tag{background:#234e49;color:#b9f4d8;border-color:#3b776a}
+.p13-lesson-entry p{line-height:1.65;color:#bfd1dc;font-size:14px}
+.p13-lesson-entry .primary{margin-top:14px}
+.p13-meta{display:flex;justify-content:space-between;color:#a8bbc8;font-size:12px;font-weight:700;margin:18px 0 8px}
+.p13-meter{height:7px;background:#283c52;border-radius:15px;overflow:hidden;margin-bottom:20px}
+.p13-meter span{display:block;height:100%;background:#83dfba;transition:width .25s}
+.p13-head{margin:0 0 15px}.p13-head h1{font-size:clamp(26px,6.8vw,38px);letter-spacing:-.8px;line-height:1.1;margin:9px 0}
+.p13-card{margin:10px 0 24px;padding:20px}
+.p13-card>p{color:#c8d9e4;line-height:1.65;font-size:15px}
+.p13-scene-label{font-weight:800;font-size:11px;letter-spacing:1px;color:#92dcbf;margin-bottom:17px}
+.p13-hint{background:#203748;color:#c3ded6;border:1px solid #38645e;border-radius:12px;padding:14px;margin:20px 0 12px;font-size:13px;line-height:1.6}
+.p13-spanish{font-size:clamp(29px,8vw,42px);font-weight:750;text-align:center;padding:16px 3px 8px;overflow-wrap:anywhere}
+.p13-audio{display:flex;justify-content:center;min-height:50px;margin:0 0 14px}
+.p13-prompt{font-size:17px!important;line-height:1.5;margin:16px 0 15px!important}
+.p13-choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.p13-choice{display:flex;align-items:center;gap:10px;text-align:left;min-width:0;min-height:78px;padding:13px;background:#1c3046;color:#eaf5ff;border:1px solid #425771;border-radius:13px;font-size:14px;line-height:1.35;overflow-wrap:anywhere;cursor:pointer}
+.p13-choice-id{flex-shrink:0;display:grid;place-items:center;width:27px;height:27px;border-radius:8px;background:#31485e;font-size:12px;font-weight:700}
+.p13-choice.is-correct{border:2px solid #7be3bd;background:#1b433c}
+.p13-choice.is-wrong{border:2px solid #ef9b9b;background:#482f3b}
+.p13-choice:disabled{opacity:.82;cursor:default}.p13-choice.is-correct:disabled{opacity:1}
+.p13-feedback{padding:16px;margin:16px 0;background:#223d45;border:1px solid #42796b;border-radius:13px}
+.p13-feedback strong{color:#a5edca}.p13-feedback p{font-size:14px;line-height:1.5;color:#e0eee7;margin:7px 0}.p13-feedback small{color:#aecfc9}
+.p13-actions{display:flex;gap:10px;margin-top:21px}.p13-actions .primary{flex:1.3}.p13-actions .secondary{flex:1}
+.p13-audio-large{display:grid;gap:10px;margin:19px 0}.p13-listen-state{font-size:13px;color:#b3c9d7!important}
+.p13-replay{margin:12px 0 22px}
+.p13-transcript{display:grid;gap:10px;margin-top:20px}.p13-line{background:#1c3045;border:1px solid #354f68;border-radius:14px;padding:14px}
+.p13-line strong{display:block;color:#9ae6c3;font-size:13px}.p13-line p{margin:7px 0 0;line-height:1.65;font-size:15px}.p13-line-controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+.p13-mini-btn{background:#2a4759;border:1px solid #47717a;border-radius:9px;color:#d7f6e8;padding:8px 11px;min-height:35px;cursor:pointer;font-size:12px}
+.p13-line .p13-german{border-top:1px solid #3e5669;color:#b8cad9;padding-top:9px;font-size:14px}
+.p13-contrast{display:grid;gap:11px;margin:24px 0}.p13-contrast>div{display:grid;gap:5px;padding:15px;border:1px solid #38556b;background:#1d3346;border-radius:12px}.p13-contrast span{font-weight:750;font-size:18px}.p13-contrast small{color:#aec5d1}
+.p13-build-target{min-height:70px;background:#101f31;border:1px dashed #4d7182;border-radius:13px;padding:18px 13px;line-height:1.55;font-size:20px;margin:14px 0}
+.p13-tiles{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.p13-tile{padding:13px 16px;background:#28514e;color:#e2fff2;border:1px solid #6aa990;border-radius:11px;font-weight:700;font-size:16px;cursor:pointer}.p13-tile:disabled{opacity:.24}
+.p13-reset{margin:12px 0}.p13-check{margin-top:12px}.p13-complete{text-align:center}.p13-star{font-size:52px;color:#9ee7c3}.p13-complete .primary,.p13-complete .secondary{margin-top:12px}
+@media(max-width:370px){.p13-choices{grid-template-columns:1fr}.p13-choice{min-height:50px}.p13-card{padding:15px}.p13-actions{flex-direction:column-reverse}}
+
+/* P13.1 – Guided Learn path and high-priority SRS in Vocab */
+.p131-course-intro{line-height:1.6;color:#bed0dc;margin:12px 0 19px;font-size:14px}
+.p131-course-list{display:grid;gap:14px;margin-bottom:22px}
+.p131-lesson-entry{border:1px solid #38675f;background:linear-gradient(155deg,#193849,#14283b);padding:19px}
+.p131-lesson-entry h2{font-size:18px}.p131-lesson-entry p{line-height:1.6;color:#bfd1dc;font-size:14px;margin:9px 0 14px}
+.p131-lesson-entry .tag{background:#234e49;color:#b9f4d8;border-color:#3b776a}
+.p131-due-priority{border:2px solid #81dbb3;background:linear-gradient(140deg,#203f42,#142d39);margin:18px 0 15px;padding:19px}
+.p131-due-priority .tag{background:#234e49;color:#b9f4d8}
+.p131-due-priority p{line-height:1.6;margin:10px 0}
+.p131-review-actions,.p131-build-actions{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}
+.p131-review-actions>button,.p131-build-actions>button{flex:1;min-width:170px}
+.p131-dialogue-question{background:#15394a;border:1px solid #4f8e8a;border-radius:15px;padding:16px;margin-bottom:18px}
+.p131-dialogue-question strong{color:#9ae6c3;display:block;font-size:13px;margin-bottom:8px}
+.p131-dialogue-question p{font-size:19px;line-height:1.5;margin:0}
+.p131-selected-tile{background:#28514e;color:#e2fff2;border:1px solid #6aa990;border-radius:9px;padding:8px 11px;margin:3px;font-size:16px;font-weight:700;cursor:pointer}
+.p131-selected-tile:disabled{opacity:1;cursor:default}
+@media(max-width:460px){.p131-review-actions,.p131-build-actions{flex-direction:column}.p131-review-actions>button,.p131-build-actions>button{min-width:unset}}
+
+/* Cuentilo P13.2 – A1 dialogues: readable chat bubbles, upfront comprehension frame, bilingual MC. */
+.p132-direction{width:max-content;max-width:100%;margin:0 auto 6px;padding:6px 11px;font-weight:800;font-size:11px;letter-spacing:.09em;background:#26484a;border:1px solid #3f7a6e;border-radius:20px;color:#c5f3df}
+.p132-question-frame{background:#1c3846;border:1px solid #4c7d7d;padding:14px 15px;border-radius:15px;margin:16px 0}
+.p132-question-frame strong{color:#bff3db}.p132-question-frame ol{padding-left:22px;margin:9px 0;display:grid;gap:8px}.p132-question-frame li{font-size:14px;line-height:1.55;color:#e2edf6}
+.p132-question-frame p{font-size:13px;line-height:1.5;margin:7px 0 0}
+.p132-dialogue-controls{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0 17px;align-items:center}
+.p132-dialogue-controls button{min-height:42px;white-space:normal}.p132-dialogue-progress{font-size:12px;color:#bbd8cd;min-height:1em;flex-basis:100%}
+.p132-chat-scene{padding:12px 13px;background:#142b3b;border:1px solid #355968;border-radius:18px;margin:12px 0 20px;display:flow-root}
+.p132-chat-scene .chat-line{margin:12px 0;max-width:91%}.p132-chat-scene .chat-line.mine{margin-left:auto}
+.p132-chat-scene .chat-bubble{background:#264356;border:1px solid #416479;color:#f1f7fc;font-size:15px;line-height:1.6;padding:12px 15px;overflow-wrap:anywhere}
+.p132-chat-scene .chat-line.mine .chat-bubble{background:#245043;border-color:#4f846e}
+.p132-chat-scene .chat-name{font-size:12px;font-weight:700;color:#b9d7df;opacity:1}
+.p132-chat-scene .chat-play-turn{min-height:33px;padding:5px 10px;margin:0;font-size:12px;border:1px solid #507a75;background:#254957;color:#d7faee}
+.p132-turn-actions{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:6px}
+.p132-translation{max-width:100%;padding:10px 12px;background:#203e4a;border-radius:10px;font-size:13px;line-height:1.5;color:#d6e5ef}
+.p132-listen-question{border-top:1px solid #416477;padding-top:12px;margin-top:13px}
+.p132-language-insight{background:#193e37;border-left:3px solid #95e5c4;padding:12px;border-radius:8px;color:#e8fff4!important}
+.p132-answer-audio{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px;font-weight:750;color:#b7f5d9;font-size:18px}
+.p132-answer-audio .palabra-audio-controls{margin:0}
+@media(max-width:420px){.p132-chat-scene{padding:10px}.p132-chat-scene .chat-line{max-width:96%}.p132-dialogue-controls button{flex:1}.p132-answer-audio{font-size:16px}}
+
+
+/* P13.3 – one-window dialogue experience and editable answer composition. */
+.p133-dialogue-window{padding:0;overflow:hidden;border:1px solid #426e70}
+.p133-dialogue-top{display:flex;gap:10px;align-items:center;padding:15px 18px;background:#1c3b45;border-bottom:1px solid #41686b;color:#e7fff4}
+.p133-dialogue-top small{margin-left:auto;color:#b1d5d4;font-size:12px}
+.p133-live-dot{width:9px;height:9px;background:#8ce3b6;border-radius:100%;box-shadow:0 0 0 4px #2b594a}
+.p133-chat-log{display:flex;flex-direction:column;gap:14px;padding:19px 15px 15px;background:#122939;max-height:46vh;min-height:110px;overflow-y:auto;scrollbar-width:thin}
+.p133-chat-line{max-width:90%;display:flex;flex-direction:column;gap:5px}
+.p133-chat-line.p133-learner{align-self:flex-end;align-items:flex-end}
+.p133-speaker-label{font-size:12px;color:#abd0d8;font-weight:750;padding:0 7px}
+.p133-bubble{background:#264659;border:1px solid #426a7c;color:#f3f8fb;border-radius:17px 17px 17px 5px;padding:12px 15px;line-height:1.55;font-size:16px;white-space:normal;overflow-wrap:anywhere}
+.p133-learner .p133-bubble{background:#275846;border-color:#4d9878;border-radius:17px 17px 5px 17px}
+.p133-composer{padding:16px 17px 21px;background:#1b3244;border-top:1px solid #38566a}
+.p133-composer .p13-prompt{margin-top:0!important;font-size:15px!important}
+.p133-compose-tip{font-size:13px!important;line-height:1.45!important}
+.p133-build-target{display:flex;gap:7px;align-items:center;align-content:flex-start;flex-wrap:wrap;min-height:81px;padding:11px;background:#132738;font-size:17px}
+.p133-selected-unit{display:inline-flex;align-items:center;gap:4px;border-radius:11px;background:#27514a;border:1px solid #72ae94;color:#effff6;padding:5px 5px 5px 9px;max-width:100%;user-select:none;cursor:grab}
+.p133-selected-unit:active{cursor:grabbing}.p133-selected-unit.p133-dragging{opacity:.48}
+.p133-token-word{background:transparent;border:0;padding:5px 4px;color:inherit;font-weight:750;font-size:15px;cursor:pointer;white-space:normal;overflow-wrap:anywhere;text-align:left}
+.p133-token-word>span{font-size:15px;opacity:.7;padding-left:3px}
+.p133-token-tools{display:flex;gap:2px;border-left:1px solid #588b77;padding-left:4px}
+.p133-move{min-width:27px;min-height:32px;border:1px solid #4d8275;background:#1a423e;color:#daf9e9;border-radius:6px;cursor:pointer;font-weight:750;font-size:15px}
+.p133-move:disabled{opacity:.23;cursor:default}
+.p133-locked-tile{background:#27514a;border:1px solid #72ae94;border-radius:10px;padding:8px 11px;font-weight:750;color:#e9fff2}
+.p133-reorder-help{margin:5px 0;font-size:12px!important;color:#accfcd!important;line-height:1.5}
+.p133-inline-note{padding:14px 16px;background:#1e4243;border:1px solid #4e7d68;border-radius:12px;margin:0 0 18px}
+.p133-inline-note strong{color:#a9f4ca}.p133-inline-note p{line-height:1.6;margin:7px 0 0;font-size:14px;color:#d7eae0}
+.p133-transition-feedback{margin:0 0 12px}
+@media(max-width:440px){.p133-dialogue-top{padding:13px}.p133-chat-log{padding:14px 10px;max-height:40vh}.p133-composer{padding:12px}.p133-build-target{padding:8px}.p133-selected-unit{padding:4px 3px 4px 6px;gap:2px}.p133-token-word{font-size:14px}.p133-move{min-width:27px;min-height:34px}.p133-chat-line{max-width:95%}}
+
+/* P14: compact, contextual A1 Grammatikhappen and course-workshop cards */
+.p14-snack .p14-snack-icon{display:grid;place-items:center;width:40px;height:40px;background:#244b48;border-radius:13px;font-size:24px;color:#9beac8;margin-bottom:10px}
+.p14-snack p,.p14-workshop p{line-height:1.65}
+.p14-sample-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;margin:16px 0}
+.p14-sample{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;border:1px solid #304b62;border-radius:13px;padding:15px;background:#1c3044}
+.p14-sample strong{font-size:1.2rem}.p14-sample small{color:#a3b9cb}.p14-sample .palabra-audio-controls{margin-top:4px}
+.p14-rule{padding:14px 16px;border-radius:12px;border-left:3px solid #54a382;background:#1a3344;margin:12px 0}
+.p14-rule p{margin:5px 0 0}.p14-workshop-entry{border-left:4px solid #64a28c}
+.p14-workshop-examples{display:grid;gap:8px;margin:14px 0}.p14-workshop-examples>div{padding:10px 13px;border-radius:10px;background:#1c3044;border:1px solid #304b62}
+.p14-workshop .p13-choices{margin:15px 0}.p14-ws-error{font-weight:600;color:#ffbca2}
+@media(max-width:490px){.p14-sample-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.p14-sample{padding:11px}.p14-sample strong{font-size:1.05rem}}
