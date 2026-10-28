@@ -14,3 +14,8 @@ Gesamten ZIP-Inhalt ins neue `cuentilo`-Repository (Root) kopieren, mit vorhande
 
 ## Qualität
 Automatische Syntax-, Pfad-, Bild- und ZIP-Integritätsprüfung; echte Geräte-/iPhone-Tests durch Nutzer stehen aus. Die Bilder entstanden aus einem generierten, zusammengehörigen Illustrations-Board, nicht aus den Story-Covern.
+
+
+## P14.1a-Fix1 – Learn-Sofortreparatur
+
+Das öffentliche Repository enthielt die erforderliche Datei `learn_course_p14_data.js` nicht. Bitte **alle Dateien** kopieren, die Datei in GitHub Desktop als neue Datei überprüfen und nach Push `check-release.html` auf GitHub Pages öffnen. Die Icon-Dateinamen wurden zur Umgehung alter Safari-Caches versioniert. Lektionsdaten, SRS und Audio bleiben unverändert.

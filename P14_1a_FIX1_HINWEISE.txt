@@ -1,0 +1,17 @@
+CUENTILO P14.1a-Fix1 — Reparatur Learn & iPhone-Icon
+
+URSACHE: In der öffentlichen GitHub-Repo-Version fehlte learn_course_p14_data.js. Ohne diese Datei kann learn_lesson.js nicht initialisieren und der Lernweg bleibt leer.
+
+BEHEBUNG:
+- learn_course_p14_data.js ist in dieser vollständigen Version enthalten (wie auch bereits im alten ZIP).
+- Neue, eindeutige Icon-Dateinamen werden aus index.html und manifest.webmanifest referenziert (um Safari-Icon-Cache zu umgehen).
+- Kursladen zeigt im Fehlerfall eine sichtbare Meldung statt leerem Bereich.
+- check-release.html prüft nach dem GitHub-Pages-Deploy alle entscheidenden Dateien.
+- Keine Änderung der Lektionen, SRS-Daten oder Audiozuordnungen.
+
+WICHTIG: GitHub Desktop muss learn_course_p14_data.js als neu hinzugefügte Datei erfassen. Nach Commit/Push im Repository prüfen, ob sie sichtbar ist. Datei darf keinesfalls fehlen.
+
+GitHub Pages Prüf-URL (bei Repo Cuentilo):
+https://josefpoz.github.io/Cuentilo/check-release.html
+
+Nur das Icon auf einer bereits installierten iOS-Web-App kann zusätzlich im iOS-Cache festhängen. Vor Entfernen der alten Web-App unbedingt Lernstandsbackup machen.
