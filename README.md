@@ -19,3 +19,7 @@ Automatische Syntax-, Pfad-, Bild- und ZIP-Integritätsprüfung; echte Geräte-/
 ## P14.1a-Fix1 – Learn-Sofortreparatur
 
 Das öffentliche Repository enthielt die erforderliche Datei `learn_course_p14_data.js` nicht. Bitte **alle Dateien** kopieren, die Datei in GitHub Desktop als neue Datei überprüfen und nach Push `check-release.html` auf GitHub Pages öffnen. Die Icon-Dateinamen wurden zur Umgehung alter Safari-Caches versioniert. Lektionsdaten, SRS und Audio bleiben unverändert.
+
+
+## P14.1c – Rechtliches und Domain
+Siehe `P14_1c_GITHUB_DOMAIN_ANLEITUNG.md` und die eigenständigen Rechtsseiten. `CNAME` muss bei späteren Updates erhalten bleiben.

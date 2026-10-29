@@ -1,0 +1,7 @@
+
+/* P14.1c: always-visible legal footer and collapsed optional backup export */
+.ct-site-footer{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:9px 16px;margin:38px 0 20px;padding:22px 4px;border-top:1px solid #3b4c5a;color:#b6b7b8;font-size:12px;text-align:center}
+.ct-site-footer a,.ct-legal-shortcuts a{color:#f0a28e;text-decoration:none;border-bottom:1px solid #c47769}
+.ct-site-footer a:focus-visible,.ct-legal-shortcuts a:focus-visible{outline:2px solid #d86658;outline-offset:3px}
+.ct-legal-shortcuts{display:flex;gap:16px;flex-wrap:wrap;margin:12px 0 18px;font-size:14px}
+.ct-data-management{margin:16px 0}.ct-data-management summary{font-size:16px;font-weight:750;cursor:pointer;color:#f5e9d5;list-style-position:inside;padding:1px 0}.ct-data-management summary:focus-visible{outline:2px solid #d86658;outline-offset:4px}.ct-data-management .secondary{margin-top:13px}.ct-data-management .footnote{margin-top:14px}

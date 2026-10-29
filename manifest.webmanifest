@@ -2,7 +2,7 @@
   "name": "Cuentilo",
   "short_name": "Cuentilo",
   "description": "Spanisch lernen mit Geschichten, Grammatik und Wortschatz",
-  "start_url": "./index.html?v=07a8p141afix1",
+  "start_url": "./index.html?v=07a8p141c",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0a1825",
@@ -10,12 +10,12 @@
   "lang": "de",
   "icons": [
     {
-      "src": "cuentilo-icon-p141a-fix1-192.png",
+      "src": "cuentilo-icon-p141c-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "cuentilo-icon-p141a-fix1-512.png",
+      "src": "cuentilo-icon-p141c-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

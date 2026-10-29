@@ -1,6 +1,6 @@
 /* Palabra 0.7a.8-P1 – preview build, keep user data intact, preserve localStorage. */
 (function () {
-  const VERSION = '07a8p141a'; // asset/cache build only; localStorage data format stays v1
+  const VERSION = '07a8p141c'; // asset/cache build only; localStorage data format stays v1
   async function cleanOldAppCaches() {
     if ('serviceWorker' in navigator) {
       const registrations = await navigator.serviceWorker.getRegistrations();
